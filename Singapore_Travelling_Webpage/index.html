@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Travelling</title>
+    <style>
+        /* 全屏背景图片和渐变遮罩 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        /* 顶部导航栏 */
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 40px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            margin-left: 30px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* 主要内容样式 */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content h1 {
+            font-size: 70px;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* 调整 The Lion City 和 The Garden City 的字体大小 */
+        .content h2 {
+            font-size: 35px;
+            font-weight: normal;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .content p {
+            font-size: 20px;
+            font-weight: normal;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* 底部景点链接样式 */
+        .attractions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* 完全居中对齐 */
+            gap: 20px;
+            padding: 20px 0 40px 0;
+            max-width: 80%; /* 控制最大宽度以实现更好的居中效果 */
+            margin: 0 auto; /* 确保在页面中居中 */
+        }
+
+        .attractions a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 5px 10px;
+        }
+
+        .attractions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">Singapore Travelling</div>
+        <div class="nav-links">
+            <a href="#food">Food</a>
+            <a href="#shopping">Shopping</a>
+            <a href="#sightseeing">Sightseeing</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#kongge">Others</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>The Lion City &nbsp; The Garden City</h2>
+        <h1>This is Singapore</h1>
+        <p>Welcome to Singapore!</p>
+    </div>
+
+    <!-- 底部景点链接 -->
+    <div class="attractions">
+        <a href="marina bay sands.html">Marina Bay Sands</a>
+        <a href="marina bay.html">Marina Bay</a>
+        <a href="merlion.html">Merlion</a>
+        <a href="National Gallery Singapore.html">National Gallery Singapore</a>
+        <a href="singapore zoo.html">Singapore Zoo</a>
+        <a href="Little India.html">Little India</a>
+        <a href="Clarke Quay.html">Clarke Quay</a>
+        <a href="Chinatown.html">Chinatown</a>
+        <a href="Sentosa.html">Sentosa</a>
+        <a href="Orchard Road.html">Orchard Road</a>
+        <a href="Changi Airport.html">Changi Airport</a>
+    </div>
+
+</body>
+</html>
