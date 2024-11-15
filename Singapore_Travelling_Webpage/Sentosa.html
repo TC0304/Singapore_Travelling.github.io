@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marina Bay Sands</title>
+    <style>
+        /* 白色背景和透明度 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Roboto, sans-serif;
+            color: rgb(45, 45, 45);
+            background-color: #ffffff; /* 白色背景 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 标题样式 */
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* 主体布局 */
+        .container {
+            display: flex;
+            width: 90%;
+            height: calc(100% - 100px); /* 调整高度与标题对齐 */
+        }
+
+        /* 左侧小红书笔记区域，设置为2行2列的网格布局 */
+        .left-section {
+            width: 30%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 两列 */
+            grid-template-rows: repeat(2, 1fr); /* 两行 */
+            gap: 20px;
+            align-items: center;
+            justify-items: center;
+            padding: 10px;
+        }
+
+        /* 小红书图片样式 */
+        .left-section img {
+            width: 100%;
+            height: 300px; /* 调整高度以对齐 */
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .left-section img:hover {
+            transform: scale(1.05); /* 鼠标悬停放大效果 */
+        }
+
+        /* 右侧内容区域 */
+        .right-section {
+            width: 70%;
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+        }
+
+        /* 分析图布局 */
+        .analysis-section {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            margin-left: 30px; /* 向右移动 */
+        }
+
+        .analysis-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        /* 分数样式 */
+        .score {
+            font-size: 24px;
+            color: #333;
+            margin-right: 10px;
+            padding: 0 5px;
+            font-weight: bold;
+        }
+
+        /* 分析图图片样式 */
+        .analysis-img {
+            width: 360px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        /* 放大效果的样式 */
+        .zoomed {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(3);
+            z-index: 1000;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        /* 文字描述部分样式 */
+        .description {
+            width: 45%;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+            padding: 20px;
+        }
+
+        /* 黄色加粗样式 */
+        .highlight {
+            font-weight: bold;
+            color: #ef8809; /* 黄色 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 标题 -->
+    <div class="title">Sentosa</div>
+
+    <div class="container">
+        <!-- 左侧小红书笔记区域，包含四个不同链接的图片，2行2列布局 -->
+        <div class="left-section">
+            <a href="https://www.xiaohongshu.com/explore/66166588000000001a011bb3?xsec_token=ABGiiYuyKn0tLYo2J92fCM-m41bIeCc3tYm781ZcPrqT0=&xsec_source=pc_search&source=web_search_result_notes" target="_blank">
+                <img src="Sentosa_1.png" alt="小红书笔记1">
+            </a>
+            <a href="https://www.xiaohongshu.com/explore/670b9700000000001402fff5?xsec_token=AB3kj-vNq-BPs8So4lkQ5UKwCm6QQFW8LYZ9LHa0CxsY8=&xsec_source=pc_search&source=web_search_result_notes" target="_blank">
+                <img src="Sentosa_2.png" alt="小红书笔记2">
+            </a>
+            <a href="https://www.xiaohongshu.com/explore/66c1fdf800000000050317c2?xsec_token=ABZMIzXktwa5EB1IwmBd6M4zrojloFh-bOnnH7Mlkm0-Y=&xsec_source=pc_search&source=web_search_result_notes" target="_blank">
+                <img src="Sentosa_3.png" alt="小红书笔记3">
+            </a>
+            <a href="https://www.xiaohongshu.com/explore/65b63e030000000010038f07?xsec_token=AB_Oz7L70Hd4Zy8UNpyB9BbL4beuE6PDA6L6m23w6W3gA=&xsec_source=pc_search&source=web_search_result_notes" target="_blank">
+                <img src="Sentosa_4.png" alt="小红书笔记4">
+            </a>
+        </div>
+
+        <!-- 右侧内容区域 -->
+        <div class="right-section">
+            <!-- 分析图和评分 -->
+            <div class="analysis-section">
+                <div class="analysis-container">
+                    <div class="score">  1/1</div>
+                    <img src="Sentosa_Activity.jpg" alt="Activity Image" class="analysis-img" onclick="toggleZoom(this)">
+                </div>
+
+                <div class="analysis-container">
+                    <div class="score">0.8/1</div>
+                    <img src="Sentosa_Sentiment.jpg" alt="Sentiment Image" class="analysis-img" onclick="toggleZoom(this)">
+                </div>
+
+                <div class="analysis-container">
+                    <div class="score">0.9/1</div>
+                    <img src="Coocurrence9.jpg" alt="Co-occurrence" class="analysis-img" onclick="toggleZoom(this)">
+                </div>
+            </div>
+
+            <!-- 文字描述部分 -->
+            <div class="description">
+                Sentosa’s semantic network shows that its core tourism image revolves around 
+                <span class="highlight">diverse entertainment experiences, family activities, and natural scenery</span>. 
+                Visitors are drawn to Sentosa for iconic attractions like the 
+                <span class="highlight">luge, Universal Studios, and the aquarium, as well as beach and cable car activities</span>.
+                The family-friendly facilities, convenient transportation, and easy booking services enhance Sentosa’s appeal, making it a multi-functional destination suitable for all ages. Peripheral keywords such as dining, photography, and various themed activities further enrich Sentosa’s image, establishing it as a top destination for entertainment, relaxation, and adventure.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleZoom(image) {
+            // 切换图像的放大效果
+            if (image.classList.contains("zoomed")) {
+                image.classList.remove("zoomed");
+            } else {
+                // 将所有放大图像恢复原状
+                document.querySelectorAll(".zoomed").forEach((img) => {
+                    img.classList.remove("zoomed");
+                });
+                // 放大点击的图像
+                image.classList.add("zoomed");
+            }
+        }
+    </script>
+
+</body>
+</html>
